@@ -1001,7 +1001,7 @@ button {
 
   .services .services_title::before {
     font-size: 70px;
-    top: -35px;
+    top: -25px;
   }
 
   .services .services_cards_container {
@@ -1378,7 +1378,7 @@ button {
 }
 
 .experience .experience_title {
-  font-size: 30px;
+   font-size: 30px;
   top: -20px;
   left: 50%;
   transform: translateX(-50%);
@@ -1394,20 +1394,18 @@ button {
 }
 
 .experience .experience_title::before {
-  content: "EDUCATION";
+content: "EDUCTION";
   position: absolute;
   top: -30px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 80px;
   font-weight: 900;
-  color: rgba(58, 1, 190, 0.199);
+  color: rgba(56, 0, 146, 0.178);
   z-index: -1;
   white-space: nowrap;
   pointer-events: none;
   font-family: "Montserrat", sans-serif;
-  width: 100%; /* FIX: Added width */
-  text-align: center; /* FIX: Ensure text alignment */
 }
 
 /* Subtitle */
@@ -1970,22 +1968,19 @@ button {
    GALLERY SECTION - WITH FIGMA MODAL
    ================================ */
 
-
-  
 .Port-title {
   font-size: 30px;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 80px 0 10px;
   color: #6200ff;
   position: relative;
   text-align: center;
-  width: 80%;
-  padding: 0 20px;
-  box-sizing: border-box;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
+  margin: 80px auto 10px;
+  padding: 0 20px;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .Port-title::before {
@@ -1996,211 +1991,24 @@ button {
   transform: translateX(-50%);
   font-size: 80px;
   font-weight: 900;
-  color: rgba(83, 1, 190, 0.199);
+  color: rgba(56, 0, 146, 0.178);
   z-index: -1;
   white-space: nowrap;
   pointer-events: none;
   font-family: "Montserrat", sans-serif;
 }
-
 /* Subtitle */
 .Port-titlep {
   color: rgb(165, 165, 165);
   max-width: 600px;
   margin: 0 auto 3rem;
-  line-height: 1.6;
+  line-height: 1.8; /* Increased from 1.6 for more spacing between lines */
   font-size: 18px;
   font-weight: 400;
   font-family: "Nunito", sans-serif;
   text-align: center;
+  /* Removed: gap: 10px; - gap doesn't work on paragraph elements */
 }
-
-/* ================================
-   RESPONSIVE FIXES FOR PORTFOLIO TITLE
-   ================================ */
-
-/* Large Tablets (1024px and below) */
-@media (max-width: 1024px) {
-  .Port-title {
-    font-size: 28px;
-    margin: 70px 0 10px;
-  }
-  
-  .Port-title::before {
-    font-size: 70px;
-    top: -25px;
-  }
-  
-  .Port-titlep {
-    font-size: 17px;
-    margin-bottom: 2.5rem;
-  }
-}
-
-/* Tablets (768px and below) */
-@media (max-width: 768px) {
-  .Port-title {
-    font-size: 26px;
-    margin: 60px 0 8px;
-    top: -15px;
-    width: 85%;
-  }
-  
-  .Port-title::before {
-    font-size: 60px;
-    top: -20px;
-  }
-  
-  .Port-titlep {
-    font-size: 16px;
-    margin-bottom: 2.5rem;
-    padding: 0 20px;
-  }
-}
-
-/* Mobile Devices (600px and below) */
-@media (max-width: 600px) {
-  .Port-title {
-    font-size: 24px;
-    margin: 50px 0 8px;
-    padding: 0 15px;
-    top: -10px;
-    width: 90%;
-  }
-  
-  .Port-title::before {
-    font-size: 50px;
-    top: -15px;
-    white-space: normal;
-    width: 100%;
-  }
-  
-  .Port-titlep {
-    font-size: 15px;
-    margin-bottom: 2.25rem;
-    padding: 0 15px;
-    line-height: 1.5;
-  }
-}
-
-/* Small Mobile Devices (480px and below) */
-@media (max-width: 480px) {
-  .Port-title {
-    font-size: 22px;
-    margin: 40px 0 6px;
-    top: -5px;
-  }
-  
-  .Port-title::before {
-    font-size: 42px;
-    top: -12px;
-    line-height: 1.2;
-  }
-  
-  .Port-titlep {
-    font-size: 14px;
-    margin-bottom: 2rem;
-    padding: 0 20px;
-  }
-}
-
-/* Very Small Mobile Devices (360px and below) */
-@media (max-width: 360px) {
-  .Port-title {
-    font-size: 20px;
-    margin: 35px 0 5px;
-    top: 0;
-  }
-  
-  .Port-title::before {
-    font-size: 36px;
-    top: -10px;
-  }
-  
-  .Port-titlep {
-    font-size: 13px;
-    margin-bottom: 1.75rem;
-    padding: 0 15px;
-  }
-}
-
-/* Extra Small Devices (320px and below) */
-@media (max-width: 320px) {
-  .Port-title {
-    font-size: 18px;
-    margin: 30px 0 5px;
-  }
-  
-  .Port-title::before {
-    font-size: 32px;
-    top: -8px;
-  }
-  
-  .Port-titlep {
-    font-size: 12px;
-    margin-bottom: 1.5rem;
-    padding: 0 10px;
-  }
-}
-
-/* Landscape Orientation Fix */
-@media (max-height: 500px) and (orientation: landscape) {
-  .Port-title {
-    margin: 40px 0 8px;
-    top: -15px;
-  }
-  
-  .Port-title::before {
-    font-size: 55px;
-    top: -20px;
-  }
-  
-  .Port-titlep {
-    margin-bottom: 2rem;
-  }
-}
-
-/* Large Desktop Screens (1440px and above) */
-@media (min-width: 1440px) {
-  .Port-title {
-    font-size: 32px;
-    margin: 100px 0 15px;
-    top: -25px;
-  }
-  
-  .Port-title::before {
-    font-size: 90px;
-    top: -40px;
-  }
-  
-  .Port-titlep {
-    font-size: 20px;
-    max-width: 700px;
-    margin-bottom: 3.5rem;
-  }
-}
-
-/* Ultra Wide Screens (1920px and above) */
-@media (min-width: 1920px) {
-  .Port-title {
-    font-size: 34px;
-    margin: 120px 0 20px;
-  }
-  
-  .Port-title::before {
-    font-size: 100px;
-    top: -45px;
-  }
-  
-  .Port-titlep {
-    font-size: 22px;
-    max-width: 800px;
-    margin-bottom: 4rem;
-  }
-}
-
-
-
 
 /* Portfolio menu */
 .portfolio-menu {
@@ -2640,11 +2448,10 @@ button {
   
   .Port-title {
     margin: 80px auto 20px;
-    min-height: 160px;
   }
   
   .Port-title::before {
-    font-size: clamp(50px, 11vw, 110px);
+    font-size: 90px;
   }
   
   .figma-modal {
@@ -2670,11 +2477,13 @@ button {
   
   .Port-title {
     margin: 70px auto 15px;
-    min-height: 140px;
   }
   
   .Port-title::before {
-    font-size: clamp(45px, 10vw, 100px);
+    font-size: 70px;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .portfolio-menu {
@@ -2721,14 +2530,14 @@ button {
   
   .Port-title {
     margin: 60px auto 15px;
-    min-height: 130px;
     padding: 0 15px;
   }
   
   .Port-title::before {
-    font-size: clamp(40px, 9vw, 90px);
-    white-space: normal;
-    line-height: 1.2;
+    font-size: 60px;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .Port-titlep {
@@ -2788,16 +2597,14 @@ button {
   
   .Port-title {
     margin: 50px auto 15px;
-    min-height: 120px;
     padding: 0 15px;
   }
   
   .Port-title::before {
-    font-size: clamp(35px, 8vw, 80px);
-    white-space: normal;
-    line-height: 1.2;
-    word-wrap: break-word;
-    width: 90%;
+    font-size: 50px;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .Port-titlep {
@@ -2888,11 +2695,13 @@ button {
   
   .Port-title {
     margin: 40px auto 10px;
-    min-height: 110px;
   }
   
   .Port-title::before {
-    font-size: clamp(30px, 7vw, 70px);
+    font-size: 42px;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .control {
@@ -2941,11 +2750,13 @@ button {
   
   .Port-title {
     margin: 35px auto 10px;
-    min-height: 100px;
   }
   
   .Port-title::before {
-    font-size: clamp(25px, 6vw, 60px);
+    font-size: 36px;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .portfolio-menu {
@@ -2995,11 +2806,13 @@ button {
   
   .Port-title {
     margin: 30px auto 15px;
-    min-height: 80px;
   }
   
   .Port-title::before {
-    font-size: clamp(25px, 5vw, 50px);
+    font-size: 42px;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .figma-embed-container {
@@ -3011,18 +2824,19 @@ button {
 @media (max-height: 400px) {
   .Port-title {
     margin: 20px auto 10px;
-    min-height: 60px;
   }
   
   .Port-title::before {
-    font-size: clamp(20px, 4vw, 40px);
+    font-size: 32px;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .portfolio-menu {
     margin-bottom: 20px;
   }
 }
-
 
 /* ===========================
    PROJECT SECTION - HIRE ME TEXT ONLY
