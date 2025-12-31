@@ -825,7 +825,7 @@ button {
 }
 
 /* ================================
-   CARD GRID & LAYOUT
+   CARD GRID & LAYOUT - FIXED FOR RESPONSIVENESS
    ================================ */
 
 .services .services_cards_container {
@@ -835,20 +835,22 @@ button {
   gap: 2rem; /* Default gap */
 }
 
-/* Wrapper */
+/* Wrapper - REMOVED FIXED HEIGHT */
 .services .services_card_wrapper {
   position: relative;
   width: 300px;
-  height: 340px;
+  /* REMOVED: height: 340px; */
+  min-height: 340px; /* Changed to min-height */
 }
 
-/* Card */
+/* Card - REMOVED FIXED HEIGHT */
 .services .services_card {
   background-color: var(--exp-surface);
   border: 1px solid #4c00fffa;
   border-radius: 16px;
   width: 100%;
-  height: 100%;
+  /* REMOVED: height: 100%; */
+  min-height: 340px; /* Added min-height */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -869,10 +871,12 @@ button {
   position: relative;
   z-index: 2;
   padding: 1.5rem;
-  height: 100%;
+  /* REMOVED: height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center; /* Added to center content */
+  flex: 1; /* Added to take available space */
 }
 
 /* ================================
@@ -891,6 +895,7 @@ button {
   opacity: 0.9;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(76, 0, 255, 0.2); /* Subtle shadow matching #4c00ff */
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 /* Font Awesome icon styling - PURPLE ICONS */
@@ -984,7 +989,7 @@ button {
 }
 
 /* ================================
-   RESPONSIVE ADJUSTMENTS
+   RESPONSIVE ADJUSTMENTS - UPDATED
    ================================ */
 
 /* Large Tablets (1024px and below) */
@@ -1000,12 +1005,16 @@ button {
   }
 
   .services .services_cards_container {
-    gap: 1.5rem; /* Reduced gap */
+    gap: 1.5rem;
   }
 
   .services .services_card_wrapper {
     width: 260px;
-    height: 300px;
+    min-height: 300px; /* Updated */
+  }
+  
+  .services .services_card {
+    min-height: 300px; /* Updated */
   }
 }
 
@@ -1014,15 +1023,18 @@ button {
   .services .services_cards_container {
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem; /* Consistent gap for column layout */
+    gap: 1.5rem;
   }
 
   .services .services_card_wrapper {
     width: 90%;
-    max-width: 320px;
-    height: auto;
-    min-height: 280px;
-    margin-bottom: 0.5rem; /* Added small margin for extra spacing */
+    max-width: 400px; /* Increased max-width */
+    min-height: auto; /* Let content determine height */
+  }
+
+  .services .services_card {
+    min-height: auto; /* Let content determine height */
+    height: auto; /* Added */
   }
 
   .services .services_title {
@@ -1034,6 +1046,10 @@ button {
   .services .services_title::before {
     font-size: 60px;
     top: -30px;
+  }
+
+  .services .services_card_content {
+    padding: 1.25rem; /* Adjusted padding */
   }
 
   .services .services_card_content h3 {
@@ -1059,11 +1075,11 @@ button {
 /* Mobile Devices (600px and below) */
 @media (max-width: 600px) {
   .services {
-    padding: 4rem 1.5rem; /* Reduced padding */
+    padding: 4rem 1.5rem;
   }
   
   .services .services_cards_container {
-    gap: 1.25rem; /* Reduced gap further */
+    gap: 1.25rem;
   }
 
   .services .services_title {
@@ -1084,16 +1100,21 @@ button {
     margin-bottom: 2.5rem;
     font-size: 17px;
   }
+  
+  .services .services_card_wrapper {
+    width: 100%;
+    max-width: 350px;
+  }
 }
 
 /* Small Mobiles (480px and below) */
 @media (max-width: 480px) {
   .services {
-    padding: 3.5rem 1rem; /* Further reduced padding */
+    padding: 3.5rem 1rem;
   }
   
   .services .services_cards_container {
-    gap: 1rem; /* Small gap for mobile */
+    gap: 1rem;
   }
 
   .services .services_title {
@@ -1111,8 +1132,15 @@ button {
   .services .services_card_wrapper {
     width: 100%;
     max-width: 320px;
-    height: auto;
-    min-height: 260px;
+    min-height: auto;
+  }
+
+  .services .services_card {
+    min-height: auto;
+  }
+
+  .services .services_card_content {
+    padding: 1rem;
   }
 
   .services .services_card_content h3 {
@@ -1139,11 +1167,11 @@ button {
 /* Very Small Devices (360px and below) */
 @media (max-width: 360px) {
   .services {
-    padding: 3rem 0.75rem; /* Minimal padding */
+    padding: 3rem 0.75rem;
   }
   
   .services .services_cards_container {
-    gap: 0.75rem; /* Very small gap */
+    gap: 0.75rem;
   }
 
   .services .services_title {
@@ -1160,6 +1188,14 @@ button {
     font-size: 16px;
     margin-bottom: 2rem;
   }
+  
+  .services .services_card_wrapper {
+    max-width: 280px;
+  }
+  
+  .services .services_card_content p {
+    max-width: 200px;
+  }
 }
 
 /* Extra Small Devices (320px and below) */
@@ -1174,7 +1210,11 @@ button {
   }
   
   .services .services_cards_container {
-    gap: 0.5rem; /* Minimum gap */
+    gap: 0.5rem;
+  }
+  
+  .services .services_card_wrapper {
+    max-width: 260px;
   }
   
   .services .services_card_content p {
@@ -1185,11 +1225,11 @@ button {
 /* Large Desktop Screens (1440px and above) */
 @media (min-width: 1440px) {
   .services {
-    padding: 8rem 3rem; /* Increased padding */
+    padding: 8rem 3rem;
   }
   
   .services .services_cards_container {
-    gap: 2.5rem; /* Increased gap for large screens */
+    gap: 2.5rem;
   }
 
   .services .services_title {
@@ -1204,7 +1244,11 @@ button {
   
   .services .services_card_wrapper {
     width: 320px;
-    height: 360px;
+    min-height: 360px;
+  }
+  
+  .services .services_card {
+    min-height: 360px;
   }
   
   .services .services_card_content h3 {
@@ -1231,15 +1275,18 @@ button {
 /* Ultra Wide Screens (1920px and above) */
 @media (min-width: 1920px) {
   .services .services_cards_container {
-    gap: 3rem; /* Even larger gap for ultra-wide */
+    gap: 3rem;
   }
   
   .services .services_card_wrapper {
     width: 340px;
-    height: 380px;
+    min-height: 380px;
+  }
+  
+  .services .services_card {
+    min-height: 380px;
   }
 }
-
 
 /* Counter Section */
 .counter-section {
