@@ -1,0 +1,150 @@
+/* portfolio.css */
+
+/* portfolio.css */
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 50px 0;
+  background-color: #000;
+  position: relative;
+}
+
+.portfolio-section h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.portfolio-menu {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.control {
+  background: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border: 1px solid #343a40;
+  border-radius: 3px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.control:hover,
+.mixitup-control-active {
+  background: #343a40;
+  color: #fff;
+}
+
+.portfolio-item {
+  padding-top: 30px;
+}
+
+.pd {
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pd img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: all 0.5s;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  visibility: hidden;
+  transform: scale(0);
+  transition: all 0.5s ease;
+}
+
+.portfolio-overlay p,
+.portfolio-overlay a {
+  position: relative;
+  z-index: 4;
+}
+
+.portfolio-overlay::before,
+.portfolio-overlay::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 0;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.portfolio-overlay::before {
+  top: 10%;
+  left: 10%;
+}
+
+.portfolio-overlay::after {
+  bottom: 10%;
+  right: 10%;
+}
+
+.pd:hover .portfolio-overlay {
+  visibility: visible;
+  transform: scale(1);
+}
+
+.pd:hover .portfolio-overlay::before {
+  width: 80%;
+  height: 80%;
+  border-top: 1px solid #50977f;
+  border-right: 1px solid #50977f;
+}
+
+.pd:hover .portfolio-overlay::after {
+  width: 80%;
+  height: 80%;
+  border-bottom: 1px solid #50977f;
+  border-left: 1px solid #50977f;
+}
+
+/* Overlay Content */
+.portfolio-overlay .category {
+  margin-top: 70px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.portfolio-overlay .magnify-icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #50977f;
+  margin: 0 5px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.25s;
+}
+
+.portfolio-overlay .magnify-icon:hover {
+  background: #000;
+}
+
+.portfolio-overlay .magnify-icon p span i {
+  font-size: 15px;
+  color: #fff;
+  line-height: 40px;
+  cursor: pointer;
+}
