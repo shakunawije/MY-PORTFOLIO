@@ -1406,6 +1406,8 @@ button {
   white-space: nowrap;
   pointer-events: none;
   font-family: "Montserrat", sans-serif;
+  width: 100%; /* FIX: Added width */
+  text-align: center; /* FIX: Ensure text alignment */
 }
 
 /* Subtitle */
@@ -1582,7 +1584,7 @@ button {
 }
 
 /* ================================
-   RESPONSIVE ADJUSTMENTS
+   RESPONSIVE ADJUSTMENTS - FIXED TITLE
    ================================ */
 
 /* Large Tablets (1024px and below) */
@@ -1594,11 +1596,12 @@ button {
   .experience .experience_title {
     font-size: 28px;
     margin: 70px auto 10px;
-    min-height: 140px;
   }
   
   .experience .experience_title::before {
-    font-size: clamp(60px, 10vw, 80px);
+    font-size: 70px;
+    width: 100%; /* FIX: Ensure full width */
+    white-space: nowrap; /* Keep as one line */
   }
   
   .experience .experience_cards_container {
@@ -1624,11 +1627,14 @@ button {
   .experience .experience_title {
     font-size: 26px;
     margin: 60px auto 8px;
-    min-height: 120px;
+    width: 90%; /* FIX: Adjusted width */
   }
   
   .experience .experience_title::before {
-    font-size: clamp(50px, 9vw, 70px);
+    font-size: 60px;
+    white-space: nowrap; /* FIX: Keep as one line */
+    width: 100%; /* FIX: Full width */
+    text-align: center; /* FIX: Center align */
   }
   
   .experience .experience_cards_container {
@@ -1689,14 +1695,18 @@ button {
     font-size: 24px;
     margin: 50px auto 8px;
     padding: 0 15px;
-    min-height: 110px;
+    width: 100%; /* FIX: Full width on mobile */
   }
   
   .experience .experience_title::before {
-    font-size: clamp(42px, 8vw, 60px);
-    white-space: normal;
+    font-size: 50px;
+    white-space: normal; /* FIX: Allow word wrap */
     word-wrap: break-word;
-    width: 90%;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 1.1; /* FIX: Better line height */
   }
   
   .experience .experience_cards_container {
@@ -1719,13 +1729,17 @@ button {
   .experience .experience_title {
     font-size: 22px;
     margin: 40px auto 6px;
-    min-height: 100px;
+    width: 100%;
   }
   
   .experience .experience_title::before {
-    font-size: clamp(36px, 7vw, 50px);
+    font-size: 42px;
     line-height: 1.1;
-    width: 95%;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap; /* FIX: Keep as one line on very small screens */
   }
   
   .experience .experience_cards_container {
@@ -1778,11 +1792,16 @@ button {
   .experience .experience_title {
     font-size: 20px;
     margin: 35px auto 5px;
-    min-height: 90px;
+    width: 100%;
   }
   
   .experience .experience_title::before {
-    font-size: clamp(32px, 6vw, 44px);
+    font-size: 36px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
   }
   
   .experience .experience_cards_container {
@@ -1808,11 +1827,16 @@ button {
   
   .experience .experience_title {
     font-size: 18px;
-    min-height: 80px;
+    width: 100%;
   }
   
   .experience .experience_title::before {
-    font-size: clamp(28px, 5vw, 38px);
+    font-size: 32px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
   }
   
   .experience .experience_cards_container {
@@ -1837,11 +1861,16 @@ button {
   
   .experience .experience_title {
     margin: 40px auto 8px;
-    min-height: 80px;
+    width: 100%;
   }
   
   .experience .experience_title::before {
-    font-size: clamp(40px, 7vw, 55px);
+    font-size: 40px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
   }
   
   .experience .experience_cards_container {
@@ -1865,11 +1894,15 @@ button {
   .experience .experience_title {
     font-size: 32px;
     margin: 100px auto 15px;
-    min-height: 180px;
+    width: 80%;
   }
   
   .experience .experience_title::before {
-    font-size: clamp(80px, 11vw, 110px);
+    font-size: 90px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
   
   .experience .experience_cards_container {
@@ -1932,7 +1965,6 @@ button {
     max-width: 800px;
   }
 }
-
 
 /* ================================
    GALLERY SECTION - WITH FIGMA MODAL
