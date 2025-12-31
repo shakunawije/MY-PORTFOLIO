@@ -1378,7 +1378,7 @@ button {
 }
 
 .experience .experience_title {
-   font-size: 30px;
+  font-size: 30px;
   top: -20px;
   left: 50%;
   transform: translateX(-50%);
@@ -1394,7 +1394,7 @@ button {
 }
 
 .experience .experience_title::before {
-content: "EDUCTION";
+content: "EDUCATION";
   position: absolute;
   top: -30px;
   left: 50%;
