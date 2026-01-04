@@ -3389,7 +3389,7 @@ input:focus, textarea:focus {
 /* ============================= */
 @media (min-width: 1200px) {
   .bg-title {
-    font-size: 100px;
+    font-size: 90px;
   }
 
   .back-title {
