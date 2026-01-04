@@ -643,7 +643,7 @@ button {
   margin: 10px auto;
   max-width: 800px;
   font-size: 1rem;
-  color: #ddd;
+  color: rgb(165, 165, 165);
   line-height: 1.6;
 }
 
@@ -2007,7 +2007,7 @@ content: "EDUCATION";
   font-weight: 400;
   font-family: "Nunito", sans-serif;
   text-align: center;
-  /* Removed: gap: 10px; - gap doesn't work on paragraph elements */
+  
 }
 
 /* Portfolio menu */
@@ -3141,8 +3141,8 @@ content: "EDUCATION";
 
 /* Description */
 .desc {
-  font-size: 13px;
-  color: #bfbfbf;
+  font-size: 1rem;
+  color: rgb(165, 165, 165);
   margin-bottom: 40px;
 }
 
