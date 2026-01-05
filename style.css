@@ -1079,7 +1079,7 @@ button {
 
 
 /* ================================
-   EXPERIENCE SECTION (FULL – ROW)
+   EXPERIENCE SECTION (GRID – 3 COLUMNS)
    ================================ */
 
 .experience {
@@ -1105,7 +1105,7 @@ button {
 .experience .experience_title {
   font-size: 30px;
   margin-bottom: 20px;
-  color: #6200ff;
+  color: var(--exp-accent);
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   position: relative;
@@ -1139,27 +1139,24 @@ button {
 }
 
 /* ================================
-   ROW CONTAINER (FLEX)
+   GRID CONTAINER
 ================================ */
 
 .experience .experience_cards_container {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns desktop */
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  flex-wrap: wrap;
 }
 
 /* ================================
-   CARD WRAPPER (SIZE LOCK)
+   CARD WRAPPER
 ================================ */
 
 .experience .experience_card_wrapper {
-  flex: 0 0 320px;
-  min-height: 340px;
+  min-height: 340px; /* EXPERIENCE SIZE */
 }
 
 /* ================================
@@ -1218,7 +1215,7 @@ button {
 }
 
 .experience .experience_card_icon img {
-   width: 28px;
+  width: 28px;
   height: 28px;
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(26%) sepia(95%)
@@ -1295,47 +1292,35 @@ button {
    RESPONSIVE
 ================================ */
 
-/* Desktop – 3 cards */
-@media (min-width: 1024px) {
-  .experience .experience_card_wrapper {
-    flex: 0 0 calc(33.333% - 2rem);
-  }
-}
-
-/* Tablet – 2 cards */
+/* Tablet – 2 columns */
 @media (max-width: 1023px) {
   .experience {
     padding: 5rem 1.5rem;
   }
 
+  .experience .experience_cards_container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+
   .experience .experience_card_wrapper {
-    flex: 0 0 calc(50% - 2rem);
     min-height: 320px;
   }
 }
 
-/* Mobile – horizontal scroll */
+/* Mobile – 1 column (stacked vertically) */
 @media (max-width: 599px) {
   .experience {
     padding: 4rem 1rem;
   }
 
   .experience .experience_cards_container {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 1rem;
+    grid-template-columns: 1fr; /* stack cards vertically */
+    gap: 1.5rem;
+    padding: 0;
   }
 
   .experience .experience_card_wrapper {
-    flex: 0 0 85%;
     min-height: 300px;
-    scroll-snap-align: center;
-  }
-
-  .experience .experience_cards_container::-webkit-scrollbar {
-    display: none;
   }
 
   .experience .experience_title {
