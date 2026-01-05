@@ -758,7 +758,7 @@ button {
 
 
 /* ================================
-   SERVICES SECTION (FINAL – ROW)
+   SERVICES SECTION (GRID – 3 COLUMNS)
    CARD SIZE = EXPERIENCE CARD
 ================================ */
 
@@ -785,7 +785,7 @@ button {
 .services .services_title {
   font-size: 30px;
   margin-bottom: 20px;
-  color: #6200ff;
+  color: var(--srv-accent);
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   position: relative;
@@ -800,7 +800,7 @@ button {
   transform: translate(-50%, -50%);
   font-size: clamp(40px, 10vw, 100px);
   font-weight: 900;
-  color: rgba(56, 0, 146, 0.15);
+  color: rgba(98, 0, 255, 0.15);
   z-index: -1;
   white-space: nowrap;
 }
@@ -819,26 +819,23 @@ button {
 }
 
 /* ================================
-   ROW CONTAINER (FLEX)
+   GRID CONTAINER
 ================================ */
 
 .services .services_cards_container {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  flex-wrap: wrap;
 }
 
 /* ================================
-   CARD WRAPPER (SIZE LOCK)
+   CARD WRAPPER
 ================================ */
 
 .services .services_card_wrapper {
-  flex: 0 0 320px;
   min-height: 340px; /* EXPERIENCE SIZE */
 }
 
@@ -978,6 +975,10 @@ button {
     padding: 5rem 1.5rem;
   }
 
+  .services .services_cards_container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+
   .services .services_card_wrapper {
     min-height: 320px;
   }
@@ -989,17 +990,7 @@ button {
   }
 
   .services .services_cards_container {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 1rem;
-    scroll-snap-type: x mandatory;
-  }
-
-  .services .services_card_wrapper {
-    flex: 0 0 85%;
-    min-height: 300px;
-    scroll-snap-align: center;
+    grid-template-columns: 1fr; /* 1 column on mobile */
   }
 
   .services .services_title {
@@ -1017,11 +1008,8 @@ button {
   .services .services_card_content p {
     font-size: 0.95rem;
   }
-
-  .services .services_cards_container::-webkit-scrollbar {
-    display: none;
-  }
 }
+
 
 /* Counter Section */
 .counter-section {
