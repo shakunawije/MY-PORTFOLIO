@@ -757,184 +757,160 @@ button {
 
 
 
-
 /* ================================
-   SERVICES SECTION - RESPONSIVE FIXED
-   ================================ */
+   SERVICES SECTION (FINAL – ROW)
+   CARD SIZE = EXPERIENCE CARD
+================================ */
 
 .services {
-  --exp-surface: #1c1c1c;
-  --exp-border: rgba(255, 255, 255, 0.1);
-  --exp-text-primary: #f0f0f0;
-  --exp-text-secondary: #ffffff;
-  --exp-accent: rgb(253, 249, 249);
-  --exp-bg: #0b0b0b;
+  --srv-bg: #0b0b0b;
+  --srv-surface: #1c1c1c;
+  --srv-accent: #6200ff;
+  --srv-text: #f0f0f0;
 
-  background-color: var(--exp-bg);
-  color: var(--exp-text-primary);
+  background-color: var(--srv-bg);
+  color: var(--srv-text);
   font-family: "Nunito", sans-serif;
-  padding: clamp(40px, 8vw, 80px) clamp(20px, 4vw, 40px);
+  padding: 6rem 2rem;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
 /* ================================
-   TITLE & SUBTITLE - MATCH PORTFOLIO
-   ================================ */
+   TITLE
+================================ */
 
 .services .services_title {
-  font-size: clamp(24px, 3vw, 36px);
+  font-size: 30px;
+  margin-bottom: 20px;
   color: #6200ff;
-  position: relative;
-  text-align: center;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
-  margin: clamp(40px, 8vw, 100px) auto 10px;
-  padding: 0 20px;
-  display: block;
-  width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
+  position: relative;
   z-index: 2;
-  line-height: 1.2;
 }
 
 .services .services_title::before {
-  content: "MY SERVICE";
+  content: "MY SERVICES";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: clamp(20px, 10vw, 100px);
+  font-size: clamp(40px, 10vw, 100px);
   font-weight: 900;
   color: rgba(56, 0, 146, 0.15);
   z-index: -1;
   white-space: nowrap;
-  pointer-events: none;
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  text-align: center;
-  opacity: 0.8;
-}
-
-/* Subtitle */
-.services .services_subtitle {
-  color: rgb(165, 165, 165);
-  max-width: 600px;
-  margin: clamp(2rem, 4vw, 2rem) auto clamp(3rem, 5vw, 4rem);
-  line-height: 1.7;
-  font-size: clamp(16px, 1.6vw, 18px);
-  font-weight: 400;
-  font-family: "Nunito", sans-serif;
-  text-align: center;
-  padding: 0 12px;
 }
 
 /* ================================
-   CARD GRID & LAYOUT - RESPONSIVE
-   ================================ */
+   SUBTITLE
+================================ */
 
-.services .services_cards_container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  justify-content: center;
-  gap: clamp(20px, 3vw, 30px);
-  max-width: 1200px;
-  margin: 0 auto;
+.services .services_subtitle {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: rgb(165, 165, 165);
+  font-size: 18px;
+  line-height: 1.6;
   padding: 0 20px;
 }
 
-/* Wrapper */
-.services .services_card_wrapper {
-  position: relative;
-  width: 100%;
-  min-height: 320px;
+/* ================================
+   ROW CONTAINER (FLEX)
+================================ */
+
+.services .services_cards_container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
 }
 
-/* Card */
+/* ================================
+   CARD WRAPPER (SIZE LOCK)
+================================ */
+
+.services .services_card_wrapper {
+  flex: 0 0 320px;
+  min-height: 340px; /* EXPERIENCE SIZE */
+}
+
+/* ================================
+   CARD
+================================ */
+
 .services .services_card {
-  background-color: var(--exp-surface);
-  border: 1px solid #4c00fffa;
+  background-color: var(--srv-surface);
+  border: 1px solid #8400ff;
   border-radius: 16px;
   width: 100%;
   height: 100%;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-  box-sizing: border-box;
-  padding: clamp(20px, 3vw, 30px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .services .services_card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(98, 0, 255, 0.2);
-  border-color: #6200ff;
+  box-shadow: 0 10px 30px rgba(98, 0, 255, 0.2);
 }
 
-/* Card Content */
+/* ================================
+   CARD CONTENT
+================================ */
+
 .services .services_card_content {
-  position: relative;
   z-index: 2;
   width: 100%;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
 }
 
 /* ================================
-   SERVICES SECTION ICON STYLING
-   ================================ */
+   ICON
+================================ */
 
 .services .services_card_icon {
-  width: clamp(50px, 6vw, 70px);
-  height: clamp(50px, 6vw, 70px);
-  margin: 0 auto clamp(15px, 2vw, 20px);
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1.5rem;
   border-radius: 50%;
-  background: white;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(76, 0, 255, 0.2);
-  flex-shrink: 0;
-}
-
-/* Font Awesome icon styling */
-.services .services_card_icon i {
-  font-size: clamp(20px, 2.5vw, 28px);
-  color: #4c00ff;
+  box-shadow: 0 4px 15px rgba(98, 0, 255, 0.2);
+  animation: iconFloat 4s ease-in-out infinite;
   transition: all 0.3s ease;
 }
 
-/* Image icon styling */
 .services .services_card_icon img {
-  width: clamp(20px, 2.5vw, 28px);
-  height: clamp(20px, 2.5vw, 28px);
+  width: 28px;
+  height: 28px;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(13%) sepia(100%) saturate(6158%) hue-rotate(265deg) brightness(100%) contrast(140%);
+  filter: brightness(0) saturate(100%) invert(26%) sepia(95%)
+    saturate(4353%) hue-rotate(258deg) brightness(100%) contrast(104%);
   transition: all 0.3s ease;
 }
 
-/* Hover effects */
 .services .services_card:hover .services_card_icon {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(76, 0, 255, 0.4);
-  background: linear-gradient(135deg, #4c00ff, #8a2be2);
-}
-
-.services .services_card:hover .services_card_icon i {
-  color: white;
-  transform: scale(1.1);
+  background: linear-gradient(135deg, #6200ff, #8a2be2);
+  box-shadow: 0 0 25px rgba(98, 0, 255, 0.4);
+  animation: none;
 }
 
 .services .services_card:hover .services_card_icon img {
@@ -942,58 +918,42 @@ button {
   transform: scale(1.1);
 }
 
-/* Icon animation */
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
+/* ================================
+   TEXT
+================================ */
 
-.services .services_card_icon {
-  animation: iconFloat 4s ease-in-out infinite;
-}
-
-.services .services_card:hover .services_card_icon {
-  animation: none;
-}
-
-/* Typography */
 .services .services_card_content h3 {
-  margin: 0 0 clamp(8px, 1vw, 12px);
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: 1.4rem;
   color: #ffffff;
+  margin-bottom: 0.8rem;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
-  line-height: 1.3;
 }
 
 .services .services_card_content p {
-  margin: 0;
+  font-size: 1rem;
   color: rgb(180, 180, 180);
-  font-size: clamp(14px, 1.2vw, 16px);
   line-height: 1.6;
-  font-weight: 400;
-  font-family: "Nunito", sans-serif;
-  max-width: 280px;
-  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
 }
 
 /* ================================
-   EFFECTS
-   ================================ */
+   GLOW BORDER
+================================ */
 
 .services .services_card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -1px;
   border-radius: inherit;
   background: radial-gradient(
-    circle 300px at var(--exp-x, 50%) var(--exp-y, 50%),
+    circle 300px at var(--srv-x, 50%) var(--srv-y, 50%),
     #6200ff,
     transparent
   );
   opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 0;
+  transition: opacity 0.3s ease;
 }
 
 .services .services_card:hover::before {
@@ -1001,349 +961,68 @@ button {
 }
 
 /* ================================
-   RESPONSIVE BREAKPOINTS
-   ================================ */
+   ICON FLOAT
+================================ */
 
-/* Ultra Large Screens (1920px and above) */
-@media (min-width: 1920px) {
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1023px) {
   .services {
-    padding: 100px 50px;
+    padding: 5rem 1.5rem;
   }
-  
-  .services .services_cards_container {
-    max-width: 1400px;
-    gap: 35px;
-  }
-  
+
   .services .services_card_wrapper {
-    min-height: 380px;
-  }
-  
-  .services .services_title::before {
-    font-size: 120px;
+    min-height: 320px;
   }
 }
 
-/* Large Desktop Screens (1440px and above) */
-@media (min-width: 1440px) {
+@media (max-width: 599px) {
   .services {
-    padding: 80px 40px;
+    padding: 4rem 1rem;
   }
-  
+
   .services .services_cards_container {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1200px;
-    gap: 30px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
   }
-  
+
   .services .services_card_wrapper {
-    min-height: 360px;
-  }
-  
-  .services .services_title::before {
-    font-size: 90px;
-  }
-}
-
-/* Desktop Screens (1024px to 1439px) */
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .services .services_cards_container {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1000px;
-    gap: 25px;
-  }
-  
-  .services .services_card_wrapper {
-    min-height: 340px;
-  }
-
-    .services .services_title::before {
-    font-size: 80px;
-  }
-}
-
-/* Tablet Landscape (768px to 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .services {
-    padding: 60px 30px;
-  }
-  
-  .services .services_cards_container {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 800px;
-    gap: 20px;
-  }
-  
-  .services .services_title {
-    margin: 60px auto 15px;
-  }
-  
-  .services .services_title::before {
-    font-size: 70px;
-  }
-  
-  .services .services_subtitle {
-    margin-bottom: 40px;
-  }
-}
-
-/* Tablet Portrait (600px to 767px) */
-@media (min-width: 600px) and (max-width: 767px) {
-  .services {
-    padding: 50px 25px;
-  }
-  
-  .services .services_cards_container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    max-width: 600px;
-  }
-  
-  .services .services_card_wrapper {
+    flex: 0 0 85%;
     min-height: 300px;
+    scroll-snap-align: center;
   }
-  
+
   .services .services_title {
-    margin: 50px auto 12px;
+    font-size: 24px;
   }
-  
-  .services .services_title::before {
-    font-size: 60px;
-  }
-  
+
   .services .services_subtitle {
     font-size: 16px;
-    margin-bottom: 35px;
   }
-  
+
   .services .services_card_content h3 {
-    font-size: 18px;
+    font-size: 1.25rem;
   }
-  
+
   .services .services_card_content p {
-    font-size: 14px;
+    font-size: 0.95rem;
+  }
+
+  .services .services_cards_container::-webkit-scrollbar {
+    display: none;
   }
 }
 
-/* Mobile Large (480px to 599px) */
-@media (min-width: 480px) and (max-width: 599px) {
-  .services {
-    padding: 40px 20px;
-  }
-  
-  .services .services_cards_container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    max-width: 400px;
-  }
-  
-  .services .services_card_wrapper {
-    min-height: 280px;
-  }
-  
-  .services .services_title {
-    margin: 40px auto 10px;
-  }
-  
-  .services .services_title::before {
-    font-size: 50px;
-    white-space: normal;
-    line-height: 1.1;
-  }
-  
-  .services .services_subtitle {
-    font-size: 15px;
-    margin-bottom: 30px;
-  }
-  
-  .services .services_card {
-    padding: 20px;
-  }
-  
-  .services .services_card_content h3 {
-    font-size: 17px;
-  }
-  
-  .services .services_card_content p {
-    font-size: 14px;
-    max-width: 250px;
-  }
-  
-  .services .services_card_icon {
-    width: 55px;
-    height: 55px;
-  }
-  
-  .services .services_card_icon i {
-    font-size: 22px;
-  }
-}
-
-/* Mobile Small (360px to 479px) */
-@media (min-width: 360px) and (max-width: 479px) {
-  .services {
-    padding: 35px 15px;
-  }
-  
-  .services .services_cards_container {
-    gap: 12px;
-  }
-  
-  .services .services_card_wrapper {
-    min-height: 260px;
-  }
-  
-  .services .services_title {
-    margin: 35px auto 8px;
-    font-size: 22px;
-  }
-  
-  .services .services_title::before {
-    font-size: 42px;
-  }
-  
-  .services .services_subtitle {
-    font-size: 14px;
-    margin-bottom: 25px;
-  }
-  
-  .services .services_card {
-    padding: 18px;
-  }
-  
-  .services .services_card_content h3 {
-    font-size: 16px;
-  }
-  
-  .services .services_card_content p {
-    font-size: 13px;
-    max-width: 220px;
-  }
-  
-  .services .services_card_icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 12px;
-  }
-  
-  .services .services_card_icon i {
-    font-size: 20px;
-  }
-}
-
-/* Extra Small Mobile (320px to 359px) */
-@media (max-width: 359px) {
-  .services {
-    padding: 30px 12px;
-  }
-  
-  .services .services_cards_container {
-    gap: 10px;
-  }
-  
-  .services .services_card_wrapper {
-    min-height: 250px;
-  }
-  
-  .services .services_title {
-    margin: 30px auto 6px;
-    font-size: 20px;
-    padding: 0 15px;
-  }
-  
-  .services .services_title::before {
-    font-size: 36px;
-  }
-  
-  .services .services_subtitle {
-    font-size: 13px;
-    padding: 0 15px;
-    margin-bottom: 20px;
-  }
-  
-  .services .services_card {
-    padding: 15px;
-  }
-  
-  .services .services_card_content h3 {
-    font-size: 15px;
-  }
-  
-  .services .services_card_content p {
-    font-size: 12px;
-    max-width: 200px;
-  }
-  
-  .services .services_card_icon {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .services .services_card_icon i {
-    font-size: 18px;
-  }
-}
-
-/* Landscape Orientation Fix */
-@media (max-height: 600px) and (orientation: landscape) {
-  .services {
-    padding: 30px 20px;
-  }
-  
-  .services .services_cards_container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-  }
-  
-  .services .services_card_wrapper {
-    min-height: 240px;
-  }
-  
-  .services .services_title {
-    margin: 25px auto 10px;
-  }
-  
-  .services .services_title::before {
-    font-size: 40px;
-  }
-}
-
-/* Touch Device Optimizations */
-@media (hover: none) and (pointer: coarse) {
-  .services .services_card:hover {
-    transform: none;
-  }
-  
-  .services .services_card:active {
-    transform: translateY(-4px);
-  }
-  
-  .services .services_card:hover .services_card_icon {
-    transform: none;
-  }
-  
-  .services .services_card:active .services_card_icon {
-    transform: scale(1.05);
-  }
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  .services .services_card,
-  .services .services_card_icon,
-  .services .services_card:hover .services_card_icon i,
-  .services .services_card:hover .services_card_icon img {
-    transition: none;
-  }
-  
-  .services .services_card_icon {
-    animation: none;
-  }
-  
-  .services .services_card:hover {
-    transform: none;
-  }
-}
 /* Counter Section */
 .counter-section {
   margin: 80px 0;
@@ -1412,16 +1091,13 @@ button {
 
 
 /* ================================
-   EXPERIENCE SECTION (FULL CODE - FULLY RESPONSIVE)
+   EXPERIENCE SECTION (FULL – ROW)
    ================================ */
 
-/* Experience */
 .experience {
   --exp-surface: #1c1c1c;
-  --exp-border: rgba(255, 255, 255, 0.1);
   --exp-text-primary: #f0f0f0;
-  --exp-text-secondary: #ffffff;
-  --exp-accent: rgb(253, 249, 249);
+  --exp-accent: #6200ff;
   --exp-bg: #0b0b0b;
 
   background-color: var(--exp-bg);
@@ -1434,19 +1110,18 @@ button {
   box-sizing: border-box;
 }
 
+/* ================================
+   TITLE
+================================ */
+
 .experience .experience_title {
   font-size: 30px;
-  margin: 0 0 20px 0;
+  margin-bottom: 20px;
   color: #6200ff;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
+  position: relative;
   z-index: 2;
-  line-height: 1.2;
 }
 
 .experience .experience_title::before {
@@ -1460,64 +1135,62 @@ button {
   color: rgba(56, 0, 146, 0.15);
   z-index: -1;
   white-space: nowrap;
-  pointer-events: none;
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  text-align: center;
-  opacity: 0.8;
 }
 
-/* Subtitle */
+/* ================================
+   SUBTITLE
+================================ */
+
 .experience .experience_subtitle {
-  color: rgb(165, 165, 165);
   max-width: 600px;
   margin: 0 auto 3rem;
-  line-height: 1.6;
+  color: rgb(165, 165, 165);
   font-size: 18px;
-  font-weight: 400;
-  font-family: "Nunito", sans-serif;
+  line-height: 1.6;
   padding: 0 20px;
 }
 
 /* ================================
-   CARD GRID & SIZE FIX
-   ================================ */
+   ROW CONTAINER (FLEX)
+================================ */
 
-/* Cards Grid */
 .experience .experience_cards_container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
   justify-content: center;
+  align-items: stretch;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  flex-wrap: wrap;
 }
 
-/* Wrapper */
+/* ================================
+   CARD WRAPPER (SIZE LOCK)
+================================ */
+
 .experience .experience_card_wrapper {
-  position: relative;
-  width: 100%;
+  flex: 0 0 320px;
   min-height: 340px;
 }
 
-/* Card */
+/* ================================
+   CARD
+================================ */
+
 .experience .experience_card {
   background-color: var(--exp-surface);
   border: 1px solid #8400ff;
   border-radius: 16px;
   width: 100%;
   height: 100%;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-sizing: border-box;
-  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience .experience_card:hover {
@@ -1525,92 +1198,49 @@ button {
   box-shadow: 0 10px 30px rgba(98, 0, 255, 0.2);
 }
 
-/* Card Content */
+/* ================================
+   CARD CONTENT
+================================ */
+
 .experience .experience_card_content {
-  position: relative;
   z-index: 2;
   padding: 1.5rem;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
-/* Card Text Styles */
-.experience .experience_card_content h3 {
-  margin: 0 0 0.8rem;
-  font-size: 1.4rem;
-  color: #ffffff;
-  font-weight: 700;
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.3;
-  width: 100%;
-}
+/* ================================
+   ICON
+================================ */
 
-.experience .experience_card_content h4 {
-  margin: 0 0 1rem;
-  font-size: 1.05rem;
-  color: rgb(228, 228, 228);
-  font-weight: 600;
-  font-family: "Nunito", sans-serif;
-  width: 100%;
-}
-
-.experience .experience_card_content p {
-  margin: 0 auto;
-  color: rgb(180, 180, 180);
-  font-size: 1rem;
-  line-height: 1.6;
-  font-weight: 400;
-  font-family: "Nunito", sans-serif;
-  max-width: 240px;
-  width: 100%;
-}
-
-/* Icon Container */
 .experience .experience_card_icon {
   width: 70px;
   height: 70px;
-  margin: 0 auto 1.5rem;
+  margin-bottom: 1.5rem;
   border-radius: 50%;
-  background: white;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.9;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(98, 0, 255, 0.2);
-  flex-shrink: 0;
+  animation: iconFloat 4s ease-in-out infinite;
 }
 
-/* Font Awesome icon styling - PURPLE ICONS */
-.experience .experience_card_icon i {
-  font-size: 28px;
-  color: #6200ff;
-  transition: all 0.3s ease;
-}
-
-/* Image icon styling */
 .experience .experience_card_icon img {
-  width: 28px;
+   width: 28px;
   height: 28px;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(26%) sepia(95%) saturate(4353%) hue-rotate(258deg) brightness(100%) contrast(104%);
+  filter: brightness(0) saturate(100%) invert(26%) sepia(95%)
+    saturate(4353%) hue-rotate(258deg) brightness(100%) contrast(104%);
   transition: all 0.3s ease;
 }
 
-/* Hover effects */
 .experience .experience_card:hover .experience_card_icon {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(98, 0, 255, 0.4);
   background: linear-gradient(135deg, #6200ff, #8a2be2);
-}
-
-.experience .experience_card:hover .experience_card_icon i {
-  color: white;
-  transform: scale(1.1);
+  animation: none;
 }
 
 .experience .experience_card:hover .experience_card_icon img {
@@ -1618,23 +1248,36 @@ button {
   transform: scale(1.1);
 }
 
-/* Icon animation */
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+/* ================================
+   TEXT
+================================ */
+
+.experience .experience_card_content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
 }
 
-.experience .experience_card_icon {
-  animation: iconFloat 4s ease-in-out infinite;
+.experience .experience_card_content h4 {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: rgb(220, 220, 220);
 }
 
-.experience .experience_card:hover .experience_card_icon {
-  animation: none;
+.experience .experience_card_content p {
+  font-size: 1rem;
+  color: rgb(180, 180, 180);
+  line-height: 1.6;
+  max-width: 240px;
 }
 
-/* Glow Border Effect */
+/* ================================
+   GLOW BORDER
+================================ */
+
 .experience .experience_card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -1px;
   border-radius: inherit;
@@ -1644,8 +1287,7 @@ button {
     transparent
   );
   opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 0;
+  transition: opacity 0.3s ease;
 }
 
 .experience .experience_card:hover::before {
@@ -1653,413 +1295,70 @@ button {
 }
 
 /* ================================
-   RESPONSIVE ADJUSTMENTS - FULLY FIXED
-   ================================ */
+   ICON FLOAT
+================================ */
 
-/* Large Desktops (1440px and above) */
-@media (min-width: 1440px) {
-  .experience {
-    padding: 8rem 3rem;
-  }
-  
-  .experience .experience_title {
-    font-size: 36px;
-    margin-bottom: 25px;
-  }
-  
-  .experience .experience_title::before {
-    font-size: clamp(80px, 12vw, 100px);
-  }
-  
-  .experience .experience_cards_container {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1400px;
-    gap: 2.5rem;
-  }
-  
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+/* Desktop – 3 cards */
+@media (min-width: 1024px) {
   .experience .experience_card_wrapper {
-    min-height: 380px;
-  }
-  
-  .experience .experience_subtitle {
-    font-size: 20px;
-    max-width: 700px;
-    margin-bottom: 4rem;
-  }
-  
-  .experience .experience_card_content h3 {
-    font-size: 1.5rem;
-  }
-  
-  .experience .experience_card_content h4 {
-    font-size: 1.15rem;
-  }
-  
-  .experience .experience_card_content p {
-    font-size: 1.05rem;
-    max-width: 280px;
-  }
-  
-  .experience .experience_card_icon {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .experience .experience_card_icon i {
-    font-size: 32px;
+    flex: 0 0 calc(33.333% - 2rem);
   }
 }
 
-/* Desktops (1024px to 1439px) */
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .experience {
-    padding: 6rem 2rem;
-  }
-  
-  .experience .experience_title {
-    font-size: 32px;
-  }
-  
-  .experience .experience_title::before {
-    font-size: clamp(40px, 9vw, 80px);
-  }
-  
-  .experience .experience_cards_container {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1200px;
-    gap: 2rem;
-  }
-}
-
-/* Large Tablets (768px to 1023px) */
+/* Tablet – 2 cards */
 @media (max-width: 1023px) {
   .experience {
     padding: 5rem 1.5rem;
   }
-  
-  .experience .experience_title {
-    font-size: 28px;
-    margin-bottom: 15px;
-  }
-  
-  .experience .experience_title::before {
-    font-size: clamp(60px, 8vw, 80px);
-  }
-  
-  .experience .experience_cards_container {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
-    gap: 1.8rem;
-  }
-  
-  .experience .experience_subtitle {
-    margin-bottom: 2.5rem;
-    font-size: 17px;
-  }
-}
 
-/* Tablets (600px to 767px) */
-@media (max-width: 767px) {
-  .experience {
-    padding: 4rem 1.5rem;
-  }
-  
-  .experience .experience_title {
-    font-size: 26px;
-    margin-bottom: 12px;
-  }
-  
-  .experience .experience_title::before {
-    font-size: clamp(50px, 7vw, 70px);
-    white-space: nowrap;
-  }
-  
-  .experience .experience_cards_container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    max-width: 600px;
-  }
-  
   .experience .experience_card_wrapper {
+    flex: 0 0 calc(50% - 2rem);
     min-height: 320px;
   }
-  
-  .experience .experience_subtitle {
-    font-size: 16.5px;
-    margin-bottom: 2.5rem;
-    padding: 0 15px;
-  }
-  
-  .experience .experience_card_content {
-    padding: 1.2rem;
-  }
-  
-  .experience .experience_card_content h3 {
-    font-size: 1.25rem;
-  }
-  
-  .experience .experience_card_content h4 {
-    font-size: 1rem;
-  }
-  
-  .experience .experience_card_content p {
-    font-size: 0.95rem;
-    max-width: 220px;
-  }
-  
-  .experience .experience_card_icon {
-    width: 65px;
-    height: 65px;
-    margin-bottom: 1.2rem;
-  }
-  
-  .experience .experience_card_icon i {
-    font-size: 26px;
-  }
 }
 
-/* Mobile Devices (480px to 599px) */
+/* Mobile – horizontal scroll */
 @media (max-width: 599px) {
   .experience {
-    padding: 3.5rem 1rem;
+    padding: 4rem 1rem;
   }
-  
+
+  .experience .experience_cards_container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+  }
+
+  .experience .experience_card_wrapper {
+    flex: 0 0 85%;
+    min-height: 300px;
+    scroll-snap-align: center;
+  }
+
+  .experience .experience_cards_container::-webkit-scrollbar {
+    display: none;
+  }
+
   .experience .experience_title {
     font-size: 24px;
-    margin-bottom: 10px;
   }
-  
-  .experience .experience_title::before {
-    font-size: clamp(42px, 6vw, 60px);
-    white-space: nowrap;
-  }
-  
-  .experience .experience_cards_container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    max-width: 400px;
-  }
-  
-  .experience .experience_card_wrapper {
-    min-height: 300px;
-  }
-  
+
   .experience .experience_subtitle {
     font-size: 16px;
-    margin-bottom: 2rem;
-    padding: 0 10px;
-  }
-  
-  .experience .experience_card_content h3 {
-    font-size: 1.2rem;
-  }
-  
-  .experience .experience_card_content h4 {
-    font-size: 0.95rem;
-  }
-  
-  .experience .experience_card_content p {
-    font-size: 0.92rem;
-    max-width: 240px;
-  }
-  
-  .experience .experience_card_icon {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .experience .experience_card_icon i {
-    font-size: 24px;
   }
 }
 
-/* Small Mobile Devices (360px to 479px) */
-@media (max-width: 479px) {
-  .experience {
-    padding: 3rem 1rem;
-  }
-  
-  .experience .experience_title {
-    font-size: 22px;
-    margin-bottom: 8px;
-  }
-  
-  .experience .experience_title::before {
-    font-size: clamp(36px, 5vw, 50px);
-  }
-  
-  .experience .experience_cards_container {
-    gap: 1.25rem;
-  }
-  
-  .experience .experience_card_wrapper {
-    min-height: 280px;
-  }
-  
-  .experience .experience_subtitle {
-    font-size: 15.5px;
-    margin-bottom: 1.8rem;
-  }
-  
-  .experience .experience_card_content {
-    padding: 1rem;
-  }
-  
-  .experience .experience_card_content h3 {
-    font-size: 1.15rem;
-  }
-  
-  .experience .experience_card_content h4 {
-    font-size: 0.9rem;
-  }
-  
-  .experience .experience_card_content p {
-    font-size: 0.9rem;
-    max-width: 220px;
-  }
-  
-  .experience .experience_card_icon {
-    width: 55px;
-    height: 55px;
-    margin-bottom: 1rem;
-  }
-  
-  .experience .experience_card_icon i {
-    font-size: 22px;
-  }
-}
-
-/* Extra Small Devices (320px to 359px) */
-@media (max-width: 359px) {
-  .experience {
-    padding: 2.5rem 0.75rem;
-  }
-  
-  .experience .experience_title {
-    font-size: 20px;
-    padding: 0 10px;
-  }
-  
-  .experience .experience_title::before {
-    font-size: clamp(32px, 4.5vw, 42px);
-  }
-  
-  .experience .experience_cards_container {
-    gap: 1rem;
-    padding: 0 10px;
-  }
-  
-  .experience .experience_card_wrapper {
-    min-height: 260px;
-  }
-  
-  .experience .experience_subtitle {
-    font-size: 15px;
-    padding: 0 5px;
-  }
-  
-  .experience .experience_card_content p {
-    max-width: 200px;
-    font-size: 0.88rem;
-  }
-  
-  .experience .experience_card_icon {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .experience .experience_card_icon i {
-    font-size: 20px;
-  }
-}
-
-/* Ultra Small Devices (below 320px) */
-@media (max-width: 319px) {
-  .experience {
-    padding: 2rem 0.5rem;
-  }
-  
-  .experience .experience_title {
-    font-size: 18px;
-  }
-  
-  .experience .experience_title::before {
-    font-size: clamp(28px, 4vw, 36px);
-  }
-  
-  .experience .experience_cards_container {
-    gap: 0.75rem;
-  }
-  
-  .experience .experience_card_wrapper {
-    min-height: 250px;
-  }
-  
-  .experience .experience_card_content p {
-    max-width: 180px;
-    font-size: 0.85rem;
-  }
-}
-
-/* Landscape Orientation Fix */
-@media (max-height: 500px) and (orientation: landscape) {
-  .experience {
-    padding: 2rem 1rem;
-  }
-  
-  .experience .experience_cards_container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  
-  .experience .experience_card_wrapper {
-    min-height: 240px;
-  }
-}
-
-/* Ultra Wide Screens (1920px and above) */
-@media (min-width: 1920px) {
-  .experience {
-    padding: 10rem 4rem;
-  }
-  
-  .experience .experience_cards_container {
-    max-width: 1600px;
-    gap: 3rem;
-  }
-  
-  .experience .experience_card_wrapper {
-    min-height: 400px;
-  }
-  
-  .experience .experience_subtitle {
-    font-size: 22px;
-    max-width: 800px;
-    margin-bottom: 5rem;
-  }
-  
-  .experience .experience_card_content h3 {
-    font-size: 1.6rem;
-  }
-  
-  .experience .experience_card_content h4 {
-    font-size: 1.2rem;
-  }
-  
-  .experience .experience_card_content p {
-    font-size: 1.1rem;
-    max-width: 300px;
-  }
-  
-  .experience .experience_card_icon {
-    width: 90px;
-    height: 90px;
-  }
-  
-  .experience .experience_card_icon i {
-    font-size: 36px;
-  }
-}
 
 /* ================================
    GALLERY SECTION - FULLY RESPONSIVE
@@ -2632,7 +1931,7 @@ button {
   }
   
   .Port-title::before {
-    font-size: 80px;
+    font-size: 100px;
   }
   
   .figma-modal {
@@ -2651,44 +1950,46 @@ button {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
-  
+
   .Port-title {
     margin: 60px auto 15px;
   }
-  
+
+  /* FIXED: Bigger background title */
   .Port-title::before {
-    font-size: 70px;
+    font-size: clamp(80px, 12vw, 110px);
   }
-  
+
   .Port-titlep {
     margin-bottom: 35px;
     font-size: 17px;
   }
-  
+
   .portfolio-menu {
     gap: 8px;
   }
-  
+
   .control {
     padding: 7px 18px;
   }
-  
+
   .figma-modal {
     max-width: 90vw;
   }
-  
+
   .figma-embed-container {
     height: 350px;
   }
-  
+
   .figma-project-details {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .portfolio-see-more {
     margin: 30px auto 50px;
   }
 }
+
 
 /* Small Tablets (600px to 767px) */
 @media (max-width: 767px) {
@@ -3261,12 +2562,14 @@ button {
   margin-bottom: 12px;
   letter-spacing: 1px;
   font-weight: 800;
+  font-family: "Nunito", sans-serif;
 }
 
 /* Description */
 .desc {
   font-size: 1rem;
   color: rgb(165, 165, 165);
+  
   margin-bottom: 40px;
 }
 
@@ -3389,7 +2692,7 @@ input:focus, textarea:focus {
 /* ============================= */
 @media (min-width: 1200px) {
   .bg-title {
-    font-size: 90px;
+    font-size: 100px;
   }
 
   .back-title {
@@ -3431,7 +2734,7 @@ input:focus, textarea:focus {
 
   .back-title {
     font-size: 28px;
-    margin-top: -50px;
+    margin-top: -60px;
   }
 
   .desc {
